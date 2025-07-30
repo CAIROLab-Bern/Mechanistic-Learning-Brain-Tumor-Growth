@@ -1,0 +1,117 @@
+###DATA SETTINGS
+# Directory containing training data
+data_dir: "../data/training"
+
+# Dataset name (e.g., "brats")
+dataset: "brats"
+
+# Image size (assumed square)
+image_size: 256
+
+# Whether to apply class conditioning
+class_cond: true
+
+# Use a single contrast MRI sequence (T2 FLAIR in our case)
+single_contrast: false
+
+
+### MODEL SETTINGS
+# Path to diffusion model weights
+model_path: ""
+
+# Diffusion steps
+diffusion_steps: 1000
+
+# Noise schedule
+noise_schedule: "linear"
+
+# Use learned sigma values
+learn_sigma: true
+
+# Use scale/shift normalization in model
+use_scale_shift_norm: false
+
+# Number of residual blocks
+num_res_blocks: 2
+
+# Number of attention heads
+num_heads: 1
+
+# Attention resolutions for the diffusion model
+attention_resolutions: '16'
+
+# Rescale learned sigmas
+rescale_learned_sigmas: false
+
+# Rescale timesteps
+rescale_timesteps: false
+
+# Number of image channels
+num_channels: 128
+
+### REGRESSOR SETTINGS
+# Path to regressor model weights
+regressor_path: ""
+
+# Scaling factor for regressor output
+regressor_scale: 200000
+
+# Regressor attention resolutions
+regressor_attention_resolutions: "32,16,8"
+
+# Regressor depth
+regressor_depth: 4
+
+# Regressor width
+regressor_width: 32
+
+# Regressor pooling method
+regressor_pool: "attention"
+
+# Use residual up/down blocks in regressor
+regressor_resblock_updown: true
+
+# Use scale/shift norm in regressor
+regressor_use_scale_shift_norm: true
+
+
+### SAMPLING & DIFFUSION GUIDANCE
+# Add noise during sampling
+noise_level: 200
+
+# Timestep respacing
+timestep_respacing: "ddim1000"
+
+# Use DDIM sampling
+use_ddim: true
+
+# Batch size for sampling
+batch_size: 1
+
+# Wehther we want all samples to be enlarged by the same amount (boolean)
+constant_relative_change: false
+
+# Batch size for sampling
+batch_size: 1
+
+# Whether to generate samples for probability maps (repeated generations, n=100)
+probability_map: false
+
+# Number of generations (only relevant if probability_map is set to true)
+generation_number: 4
+
+
+### PARTITIONING SETTINGS
+# Use dataset partitioning, #whether to run it only on a specific subset (automatically taken from the keys of the dictionary)
+partition: true
+
+# Specific list of patients to process
+relative_tumor_change_dict: "../data/targets_dict_test.pkl"
+
+
+### OUTPUT SETTINGS
+# Run identifier -- results will be saved under this directory in the original data directory
+run_id: generated_NL200_RS200k
+
+# Device to use ('cpu', 'cuda', or custom like 'cluster')
+device: "cluster"

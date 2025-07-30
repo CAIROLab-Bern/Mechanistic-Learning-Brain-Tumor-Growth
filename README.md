@@ -158,12 +158,10 @@ Additionally, specific arguments depending on the data and use case must be prov
 
 ## Inference 
 
-To generate samples using the guided diffusion network, the gd_regressor_sample_known.py needs to be run. The paths of the already trained diffusion model and regression model need to be provided. The specific parameters can be found in the ```config/config_gd.yaml``` file.
+To generate samples using the guided diffusion network, the gd_regressor_sample_known.py needs to be run. The paths of the already trained diffusion model and regression model need to be provided. The specific parameters can be found in the ```config/config_gd.yaml``` file. The generation can be guided towards a fixed relative change, by setting ```--constant_relative_change True``` and specifying the exact value with ```--relative_change xxx```. If specific relative changes are expected for the different samples, a dictionary (saved as pickle) is defined, specifying the sample as key and the target image (if available: longitudinal samples) and the relative change (an example file is provided for the dummy validation set in ```data/targets_dict.pkl```). 
 
 **NOTES**:
 * The name for the model_path or regressor_path should be in the following format: modelxxxxxx.pt, where xxxxxx is the the number of iterations the training ran for. 
-
-The 'scripts/regressor_sample_known.py' script needs to be run to generate brain slices with different tumor sizes, while setting the following default and specific parameters:
 
 
 ## Mechanistic modeling
