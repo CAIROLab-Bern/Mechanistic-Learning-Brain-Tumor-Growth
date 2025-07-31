@@ -199,7 +199,7 @@ The ODE models is fitted across the existing patient measurements and is then us
 
 </div>
 
-### 💾 [ODE Setup](#-ode-setup)
+### 💾 ODE Setup
 
 #### Prerequisites
 - Python 3.10+
