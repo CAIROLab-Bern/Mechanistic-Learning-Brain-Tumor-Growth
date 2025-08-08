@@ -18,39 +18,6 @@ The ODE models is fitted across the existing patient measurements and is then us
 
 </div>
 
-## 💾 Setup
-
-### Prerequisites
-- Python 3.10+
-- `numpy` 1.24.4
-- `lmfit` 1.2.0
-- [uv](https://github.com/astral-sh/uv) package manager
-
-### Environment
-
-1. **Install uv** (if not already installed):
-   ```bash
-   curl -LsSf https://astral.sh/uv/install.sh | sh
-   ```
-
-2. **Clone repository**:
-   ```bash
-   git clone <# add correct url>
-   cd <# add correct folder>
-   ```
-
-3. **Create and activate virtual environment**:
-   ```bash
-   uv venv --python 3.10
-   source .venv/bin/activate
-   ```
-
-4. **Install package in development mode**:
-   ```bash
-   uv pip install -e .
-   ```
-
-
 ## 🩻 Data
 
 The main data file is a pickled Python dictionary containing longitudinal tumor area measurement data for multiple patients and slices, e.g., ``area_over_time_dict.pkl``
@@ -134,11 +101,3 @@ python boxplotsPerformance.py
 | `slope` | Response transition steepness |
 | `SD_1` | Radiation survival fraction |
 | `V_01` | Initial normalized volume |
-
-## Citation
-
-Please cite our work if you find the paper or our code useful.
-
-```
-#todo
-```
